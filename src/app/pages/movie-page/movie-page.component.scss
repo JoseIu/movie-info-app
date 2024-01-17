@@ -1,0 +1,76 @@
+.movie {
+  padding: 1em;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  &__img {
+    border-radius: 0.3em;
+
+    max-width: 50em;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    &-body {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.4em;
+    }
+    &-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    &-date {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    &-tagline {
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+    &-subtitle {
+      font-size: 1.1rem;
+    }
+    &-categories {
+      display: flex;
+      gap: 0.4em;
+    }
+    &-categorie {
+      background-color: #222;
+      border-radius: 0.3em;
+      padding: 0.4em 0.6em;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+    &-overview {
+      text-wrap: pretty;
+      line-height: 1.3em;
+    }
+    &-footer {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5em;
+      font-size: 0.9rem;
+    }
+    &-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+    &-item {
+      padding: 0.3em 0.1em;
+      border-bottom: 0.0625rem solid #fff;
+      font-weight: 600;
+    }
+    &-data {
+      font-weight: 500;
+      color: #ffffffd8;
+    }
+  }
+}
