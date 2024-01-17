@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { enviroment } from '../../environments/environments';
+import { Credits } from '../interfaces/movie-credits.interface';
 import { MovieInfo } from '../interfaces/movie.interface';
 import { Movie, MoviesResult } from '../interfaces/moviesResult';
 
@@ -36,5 +37,14 @@ export class MoviesServicesService {
         headers,
       }
     );
+  }
+
+  public getCreditsMovie(movie_id: number): Observable<Credits> {
+    const headers = {
+      Authorization: 'bearer ' + this.token,
+    };
+    return this.http.get<Credits>(`${this.baseUrl}/movie/${movie_id}/credits`, {
+      headers,
+    });
   }
 }
