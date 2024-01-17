@@ -1,0 +1,20 @@
+@if (img) {
+<div class="banner wrapper">
+  <img [srcset]="base_imgUrl + img" [alt]="bannerMovie?.title" />
+
+  <div class="banner__info">
+    <h2 class="banner__info-title">{{ bannerMovie?.title }}</h2>
+    <span class="banner__info-date">{{ bannerMovie?.release_date }} </span>
+    <p class="banner__info-overview">{{ bannerMovie?.overview }}</p>
+  </div>
+</div>
+<ul class="banner__logos wrapper">
+  @for (logo of bannerMovie?.production_companies; track $index) {
+  @if(logo.logo_path) {
+  <li class="banner__logo">
+    <img [srcset]="base_imgLogo + logo.logo_path" [alt]="logo.name" />
+  </li>
+  } }
+</ul>
+
+}

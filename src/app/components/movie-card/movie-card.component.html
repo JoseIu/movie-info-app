@@ -1,0 +1,18 @@
+@if (movie) {
+<article class="movie">
+  <img
+    class="movie__img"
+    [srcset]="img_500 + movie.backdrop_path"
+    [alt]="movie.title"
+  />
+
+  <div class="movie__info">
+    <h2 class="movie__title">
+      {{ movie.title }}
+      <span class="movie__release"> {{ movie.release_date }} </span>
+    </h2>
+
+    <rating-movie [rating]="movie.vote_average"></rating-movie>
+  </div>
+</article>
+}
