@@ -1,0 +1,8 @@
+<ul class="logos">
+  @for (companie of production_companies; track companie.id) {
+  @if(companie.logo_path) {
+
+  <companies-logo [logo_path]="companie.logo_path" [name]="companie.name" />
+
+  } }
+</ul>
