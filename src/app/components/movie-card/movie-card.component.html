@@ -2,7 +2,8 @@
 <article class="movie">
   <img
     class="movie__img"
-    [srcset]="img_500 + movie.backdrop_path"
+    [src]="img_500 + movie.backdrop_path"
+    loading="lazy"
     [alt]="movie.title"
   />
 
