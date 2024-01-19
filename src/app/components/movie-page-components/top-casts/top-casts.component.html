@@ -1,0 +1,9 @@
+<div class="casts">
+  <h2 class="casts__title">Top Casts</h2>
+  <div class="casts__list">
+    @for (actor of creditsMovie|slice:0:10; track actor.id) {
+    <actors-card [actor]="actor"></actors-card>
+
+    }
+  </div>
+</div>

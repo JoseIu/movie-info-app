@@ -1,0 +1,23 @@
+.casts {
+  padding: 1em;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__list {
+    padding: 1em 0;
+    display: flex;
+    gap: 1.2em;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+}
+.casts__list::-webkit-scrollbar {
+  height: 3px;
+}
+
+.casts__list::-webkit-scrollbar-thumb {
+  background-color: #ffffffc0;
+}
