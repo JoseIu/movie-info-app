@@ -1,3 +1,9 @@
+.movie-ifo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5em;
+}
+
 .movie {
   padding: 1em;
 
@@ -8,11 +14,21 @@
     grid-template-columns: repeat(1, 1fr);
   }
   &__img {
+    position: relative;
     border-radius: 0.3em;
+    overflow: hidden;
 
     max-width: 50em;
   }
-
+  &__image {
+    height: 100%;
+  }
+  &__rating {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    padding: 0.3em 0.5em;
+  }
   &__content {
     display: flex;
     flex-direction: column;
@@ -52,25 +68,14 @@
       text-wrap: pretty;
       line-height: 1.3em;
     }
-    &-footer {
-      display: flex;
-      flex-direction: column;
-      row-gap: 0.5em;
-      font-size: 0.9rem;
-    }
-    &-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-    }
-    &-item {
-      padding: 0.3em 0.1em;
-      border-bottom: 0.0625rem solid #fff;
-      font-weight: 600;
-    }
-    &-data {
-      font-weight: 500;
-      color: #ffffffd8;
-    }
+  }
+}
+
+.trailers {
+  padding: 1em;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
   }
 }

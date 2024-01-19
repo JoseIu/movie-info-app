@@ -1,59 +1,44 @@
 @if (movie) {
-<section class="wrapper">
+<section class="movie-ifo wrapper">
   <div class="movie">
-    <img
-      class="movie__img"
-      [srcset]="img_500 + movie.backdrop_path"
-      [alt]="movie.title"
-    />
+    <div class="movie__img">
+      <img
+        class="movie__image"
+        [src]="img_500 + movie.backdrop_path"
+        [alt]="movie.title"
+      />
+      <rating-movie [rating]="movie.vote_average" class="movie__rating" />
+    </div>
 
     <div class="movie__content">
       <header class="movie__content-header">
-        <h2 class="movie__content-title">
-          {{ movie.title }}
-          <span class="movie__content-date"
-            >{{ movie.release_date | date : "yyy" }}
-          </span>
-        </h2>
-        <span class="movie__content-tagline"> {{ movie.tagline }} </span>
+        <header-movie
+          [title]="movie.title"
+          [release_date]="movie.release_date"
+          [tagline]="movie.tagline"
+        />
       </header>
 
-      <div>
-        <ul class="movie__content-categories">
-          @for (categorie of movie.genres; track categorie.id) {
-
-          <li class="movie__content-categorie">{{ categorie.name }}</li>
-          }
-        </ul>
-      </div>
       <div class="movie__content-body">
         <h3 class="movie__content-subtitle">OverView</h3>
         <p class="movie__content-overview">{{ movie.overview }}</p>
       </div>
-      <footer class="movie__content-footer">
-        <div class="movie__content-info">
-          <span class="movie__content-item"
-            >Status: <span class="movie__content-data">{{ movie.status }}</span>
-          </span>
-          <span class="movie__content-item"
-            >Relase Date:
-            <span class="movie__content-data">{{
-              movie.release_date | date : "mediumDate"
-            }}</span>
-          </span>
 
-          <span class="movie__content-item"
-            >Runtime:
-            <span class="movie__content-data">{{ movie.runtime }} min.</span>
-          </span>
-        </div>
-
-        <span class="movie__content-item">Director: <span></span> </span>
-        <span class="movie__content-item">Writter: <span></span> </span>
-      </footer>
+      <movie-footer
+        [status]="movie.status"
+        [release_date]="movie.release_date"
+        [runtime]="movie.runtime"
+      />
     </div>
+  </div>
+
+  <app-companies-logos [production_companies]="movie.production_companies" />
+
+  <top-casts [creditsMovie]="creditsMovie" />
+
+  <div class="trailers">
+    <h2 class="trailers__title">Official Trailers</h2>
   </div>
 </section>
 
-<rating-movie [rating]="movie.vote_average"></rating-movie>
 }
