@@ -1,0 +1,25 @@
+.actor {
+  width: 13em;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  color: #222;
+
+  background-color: rgba(253, 253, 253, 0.89);
+
+  &__img {
+    border-radius: 0.4em;
+  }
+  &__info {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3em;
+  }
+  &__name {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  &__character {
+    font-size: 0.85rem;
+  }
+}

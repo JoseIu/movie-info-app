@@ -1,0 +1,15 @@
+@if (actor && actor.profile_path) {
+
+<article class="actor">
+  <img
+    class="actor__img"
+    [src]="img_300 + actor.profile_path"
+    [alt]="actor.original_name"
+  />
+  <div class="actor__info">
+    <h2 class="actor__name">{{ actor.original_name }}</h2>
+    <h3 class="actor__character">{{ actor.character }}</h3>
+  </div>
+</article>
+
+}

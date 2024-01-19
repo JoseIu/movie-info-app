@@ -4,3 +4,15 @@
   grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
   gap: 2em;
 }
+::-webkit-scrollbar {
+  width: 2px; /* Ancho del scroll */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3498db; /* Color del "pulgón" del scroll */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de fondo del track del scroll */
+}
