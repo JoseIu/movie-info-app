@@ -1,6 +1,6 @@
 @if (img) {
 <div class="banner wrapper">
-  <img [srcset]="base_imgUrl + img" [alt]="bannerMovie?.title" />
+  <img [src]="base_imgUrl + img" [alt]="bannerMovie?.title" />
 
   <div class="banner__info">
     <h2 class="banner__info-title">{{ bannerMovie?.title }}</h2>
@@ -9,11 +9,9 @@
   </div>
 </div>
 <ul class="banner__logos wrapper">
-  @for (logo of bannerMovie?.production_companies; track $index) {
+  @for (logo of bannerMovie?.production_companies; track logo.id) {
   @if(logo.logo_path) {
-  <li class="banner__logo">
-    <img [srcset]="base_imgLogo + logo.logo_path" [alt]="logo.name" />
-  </li>
+  <companies-logo [logo_path]="logo.logo_path" [name]="logo.name" />
   } }
 </ul>
 

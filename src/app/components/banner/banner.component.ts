@@ -8,11 +8,12 @@ import {
 import { IMG_URL_500, IMG_URL_LOGO } from '../../helpers/imageUrl';
 import { MovieInfo } from '../../interfaces/movie.interface';
 import { MoviesServicesService } from '../../services/movies-services.service';
+import { CompaniesLogoComponent } from '../companies-logo/companies-logo.component';
 
 @Component({
   selector: 'banner-img',
   standalone: true,
-  imports: [],
+  imports: [CompaniesLogoComponent],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
