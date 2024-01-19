@@ -1,0 +1,11 @@
+.categories {
+  display: flex;
+  gap: 0.4em;
+  &__categorie {
+    background-color: #222;
+    border-radius: 0.3em;
+    padding: 0.4em 0.6em;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+}
