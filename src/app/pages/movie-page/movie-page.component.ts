@@ -74,7 +74,7 @@ export class MoviePageComponent implements OnInit {
 
   public getTrailersMovie() {
     this.activateRoute.params
-      .pipe(switchMap(({ id }) => this.moviesService.getTrailersMovie2(id)))
+      .pipe(switchMap(({ id }) => this.moviesService.getTrailersMovie(id)))
       .subscribe((trailers) => {
         console.log('TRAILERS', trailers);
         this.trailersMovie = trailers;

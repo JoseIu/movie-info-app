@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { enviroment } from '../../environments/environments';
 import { Credits } from '../interfaces/movie-credits.interface';
 import { MovieInfo } from '../interfaces/movie.interface';
+import { Trailer, Trailers } from '../interfaces/movie.trailer.interface';
 import { Movie, MoviesResult } from '../interfaces/moviesResult';
 
 @Injectable({
@@ -13,6 +14,7 @@ export class MoviesServicesService {
   public http = inject(HttpClient);
 
   private baseUrl = 'https://api.themoviedb.org/3';
+
   private token = enviroment.moeviedb_token;
 
   public getMovies(): Observable<Movie[]> {
@@ -46,5 +48,16 @@ export class MoviesServicesService {
     return this.http.get<Credits>(`${this.baseUrl}/movie/${movie_id}/credits`, {
       headers,
     });
+  }
+
+  public getTrailersMovie(movie_id: number): Observable<Trailer[]> {
+    const headers = {
+      Authorization: 'bearer ' + this.token,
+    };
+    return this.http
+      .get<Trailers>(`${this.baseUrl}/movie/${movie_id}/videos`, {
+        headers,
+      })
+      .pipe(map((response: Trailers) => response.results));
   }
 }
