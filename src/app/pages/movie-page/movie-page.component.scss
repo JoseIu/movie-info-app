@@ -3,7 +3,10 @@
   flex-direction: column;
   row-gap: 5em;
 }
-
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+}
 .movie {
   padding: 1em;
 
@@ -29,40 +32,23 @@
     right: 0.5em;
     padding: 0.3em 0.5em;
   }
+
   &__content {
     display: flex;
     flex-direction: column;
     row-gap: 1em;
+    &-header {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.6em;
+    }
     &-body {
       display: flex;
       flex-direction: column;
       row-gap: 0.4em;
     }
-    &-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-    &-date {
-      font-weight: 500;
-      font-size: 1rem;
-    }
-    &-tagline {
-      font-size: 0.9rem;
-      font-style: italic;
-    }
     &-subtitle {
       font-size: 1.1rem;
-    }
-    &-categories {
-      display: flex;
-      gap: 0.4em;
-    }
-    &-categorie {
-      background-color: #222;
-      border-radius: 0.3em;
-      padding: 0.4em 0.6em;
-      font-size: 0.7rem;
-      text-transform: uppercase;
     }
     &-overview {
       text-wrap: pretty;
@@ -71,20 +57,25 @@
   }
 }
 
-.trailers {
+.top-casts,
+.trailers,
+.movies {
   padding: 1em;
-
   display: flex;
   flex-direction: column;
-  row-gap: 2em;
-
-  &__title {
-    font-size: 2rem;
-    font-weight: 600;
-  }
+  row-gap: 1.8em;
+}
+.trailers {
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-    gap: 1em;
+    gap: 1.5em;
+  }
+}
+.movies {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 2em;
   }
 }

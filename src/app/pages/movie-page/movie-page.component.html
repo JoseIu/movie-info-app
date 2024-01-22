@@ -17,6 +17,7 @@
           [release_date]="movie.release_date"
           [tagline]="movie.tagline"
         />
+        <category-movies [genres]="movie.genres" />
       </header>
 
       <div class="movie__content-body">
@@ -34,13 +35,21 @@
 
   <app-companies-logos [production_companies]="movie.production_companies" />
 
-  <top-casts [creditsMovie]="creditsMovie" />
+  <section class="top-casts">
+    <h2 class="title">Top Casts</h2>
+    <top-casts [creditsMovie]="creditsMovie" />
+  </section>
 
-  <div class="trailers">
-    <h2 class="trailers__title">Official Trailers</h2>
+  <section class="trailers">
+    <h2 class="title">Official Trailers</h2>
 
     <list-of-trailers class="trailers__list" [trailersMovie]="trailersMovie" />
-  </div>
+  </section>
+
+  <section class="movies">
+    <h2 class="title">Similar Movies</h2>
+    <list-of-movies class="movies__list" [movies]="similarMovies" />
+  </section>
 </section>
 
 }
