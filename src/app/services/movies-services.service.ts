@@ -60,4 +60,15 @@ export class MoviesServicesService {
       })
       .pipe(map((response: Trailers) => response.results));
   }
+
+  public getSimilarMovies(movie_id: number): Observable<Movie[]> {
+    const headers = {
+      Authorization: 'bearer ' + this.token,
+    };
+    return this.http
+      .get<MoviesResult>(`${this.baseUrl}/movie/${movie_id}/similar`, {
+        headers,
+      })
+      .pipe(map((response: MoviesResult) => response.results));
+  }
 }
