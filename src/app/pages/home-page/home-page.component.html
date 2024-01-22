@@ -3,9 +3,4 @@
   [id]="banner_random?.id"
 ></banner-img>
 
-<div class="movies wrapper">
-  @for (movie of movies; track movie.id) {
-
-  <movie-card [movie]="movie" [routerLink]="['/movie/', movie.id]" />
-  }
-</div>
+<list-of-movies class="movies wrapper" [movies]="movies" />
