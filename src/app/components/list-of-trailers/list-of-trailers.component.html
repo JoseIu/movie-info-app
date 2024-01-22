@@ -1,0 +1,11 @@
+@for (trailer of trailersMovie | slice:0:3; track trailer.id) {
+
+<iframe
+  class="trailer"
+  width="600"
+  height="415"
+  [src]="getYouTubeLink(trailer.key)"
+  frameborder="0"
+  allowfullscreen
+></iframe>
+}
