@@ -17,7 +17,7 @@
     position: absolute;
     width: 100%;
     padding: 1em;
-    font-weight: 700;
+    font-weight: 800;
     bottom: 0.5em;
     left: 0;
     min-height: 5em;
@@ -34,5 +34,28 @@
   }
   &__release {
     font-size: 0.9rem;
+  }
+}
+
+.animation {
+  view-timeline: --subjectReveal block;
+  view-timeline-inset: 70% -6.25rem;
+  animation-timeline: --subjectReveal;
+
+  animation-name: appear;
+  animation-range: entry 10% contain 25%;
+  animation-fill-mode: both;
+  animation-duration: 1ms;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
