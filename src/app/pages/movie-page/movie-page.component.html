@@ -5,12 +5,11 @@
       <div class="">
         <img
           class="movie__image"
-          loading="lazy"
           height="400"
           width="300"
-          [src]="img_500 + movie.poster_path"
+          [ngSrc]="img_500 + movie.poster_path"
           [alt]="movie.title"
-          [style]="{ 'view-transition-name': 'movie-' + movie.id }"
+          priority="true"
         />
       </div>
       <rating-movie [rating]="movie.vote_average" class="movie__rating" />
@@ -35,6 +34,7 @@
         [status]="movie.status"
         [release_date]="movie.release_date"
         [runtime]="movie.runtime"
+        [crew]="crew"
       />
       <app-companies-logos
         [production_companies]="movie.production_companies"

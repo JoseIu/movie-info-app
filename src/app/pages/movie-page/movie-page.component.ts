@@ -1,8 +1,7 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs';
-import { ActorsCardComponent } from '../../components/actors-card/actors-card.component';
+import { switchMap, tap } from 'rxjs';
 import { CategoryMoviesComponent } from '../../components/category-movies/category-movies.component';
 import { CompaniesLogoComponent } from '../../components/companies-logo/companies-logo.component';
 import { CompaniesLogosComponent } from '../../components/companies-logos/companies-logos.component';
@@ -24,13 +23,13 @@ import { MoviesServicesService } from '../../services/movies-services.service';
   standalone: true,
   imports: [
     CommonModule,
+    NgOptimizedImage,
     HeaderComponent,
     RatingComponent,
     CompaniesLogoComponent,
     CompaniesLogosComponent,
     MovieFooterComponent,
     TopCastsComponent,
-    ActorsCardComponent,
     CategoryMoviesComponent,
     ListOfTrailersComponent,
     ListOfMoviesComponent,
@@ -46,6 +45,8 @@ export class MoviePageComponent implements OnInit {
   public trailersMovie?: Trailer[];
   public creditsMovie?: Cast[];
 
+  public crew?: Cast[];
+
   public similarMovies?: Movie[];
   public img_500: string = IMG_URL_500;
   ngOnInit(): void {
@@ -59,7 +60,7 @@ export class MoviePageComponent implements OnInit {
     this.activateRoute.params
       .pipe(switchMap(({ id }) => this.moviesService.getMovieById(id)))
       .subscribe((movie) => {
-        console.log('INFO MOVIE', movie);
+        // console.log('INFO MOVIE', movie);
 
         this.movie = movie;
         return;
@@ -68,21 +69,26 @@ export class MoviePageComponent implements OnInit {
 
   public getCreditsMovie() {
     this.activateRoute.params
-      .pipe(switchMap(({ id }) => this.moviesService.getCreditsMovie(id)))
-      .pipe(map((credits: Credits) => credits.cast))
-      .subscribe((credits) => {
-        console.log('CREDITS', credits);
+      .pipe(
+        switchMap(({ id }) => this.moviesService.getCreditsMovie(id)),
+        tap((credits: Credits) => {
+          console.log(credits);
+          console.log('CASR', credits.cast);
+          this.creditsMovie = credits.cast;
 
-        this.creditsMovie = credits;
-        return;
-      });
+          this.crew = credits.crew;
+
+          console.log('CREW', credits.crew);
+        })
+      )
+      .subscribe();
   }
 
   public getTrailersMovie() {
     this.activateRoute.params
       .pipe(switchMap(({ id }) => this.moviesService.getTrailersMovie(id)))
       .subscribe((trailers) => {
-        console.log('TRAILERS', trailers);
+        // console.log('TRAILERS', trailers);
         this.trailersMovie = trailers;
         return;
       });
@@ -92,7 +98,7 @@ export class MoviePageComponent implements OnInit {
     this.activateRoute.params
       .pipe(switchMap(({ id }) => this.moviesService.getSimilarMovies(id)))
       .subscribe((similarMovies) => {
-        console.log('SIMILAR MOVIES', similarMovies);
+        // console.log('SIMILAR MOVIES', similarMovies);
 
         this.similarMovies = similarMovies;
         return;
