@@ -1,4 +1,5 @@
-@for (movie of movies; track movie.id) { @if (movie.backdrop_path) {
+@for (movie of movies; track movie.id) { @if (movie.backdrop_path ||
+movie.poster_path) {
 <movie-card [movie]="movie" [routerLink]="['/movie/', movie.id]" />
 
 } }
