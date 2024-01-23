@@ -1,6 +1,6 @@
 .circular-progress {
   position: relative;
-  background: conic-gradient(#7d2ae8 220deg, #000 0deg);
+  background: conic-gradient(var(--bg-color) 220deg, var(--bg-color) 0deg);
   height: 3rem;
   width: 3rem;
   display: flex;
@@ -15,7 +15,7 @@
   height: 2.3rem;
   width: 2.3rem;
   border-radius: 50%;
-  background-color: #000;
+  background-color: var(--bg-color);
 }
 .progress-value {
   position: relative;
