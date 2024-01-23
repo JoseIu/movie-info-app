@@ -1,6 +1,11 @@
 @if (img) {
 <div class="banner wrapper">
-  <img [src]="base_imgUrl + img" [alt]="bannerMovie?.title" />
+  <img
+    width="900"
+    height="760"
+    [src]="base_imgUrl + img"
+    [alt]="bannerMovie?.title"
+  />
 
   <div class="banner__info">
     <h2 class="banner__info-title">{{ bannerMovie?.title }}</h2>

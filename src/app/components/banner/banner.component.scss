@@ -1,6 +1,6 @@
 .banner {
   position: relative;
-  background: linear-gradient(360deg, rgba(4, 21, 45, 0) 0%, #04122d 19.17%);
+  background: linear-gradient(360deg, rgba(4, 21, 45, 0) 0%, #070709 19.17%);
 
   &::after {
     content: "";
@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     background-color: rebeccapurple;
-    background: linear-gradient(270deg, rgba(4, 21, 45, 0) 50%, #000 100%);
+    background: linear-gradient(270deg, rgba(4, 21, 45, 0) 50%, #070709 100%);
   }
   &::before {
     content: "";
@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     background-color: rebeccapurple;
-    background: linear-gradient(90deg, rgba(4, 21, 45, 0) 50%, #000 100%);
+    background: linear-gradient(90deg, rgba(4, 21, 45, 0) 50%, #070709 100%);
   }
 
   &__info {
@@ -32,13 +32,15 @@
     border-radius: 0.3em;
     z-index: 1;
 
-    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #000000 90%);
+    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #070709 90%);
 
     display: flex;
     flex-direction: column;
     row-gap: 0.3em;
 
     &-title {
+      color: var(--text-color-secondary);
+
       font-size: 1.5rem;
       font-weight: 600;
     }
