@@ -10,11 +10,11 @@
   }
   &__span {
     padding: 0.3em 0.1em;
-    border-bottom: 0.0625rem solid #fff;
+    border-bottom: 0.0625rem solid var(--text-color-secondary);
     font-weight: 600;
   }
   &__data {
-    font-weight: 500;
+    font-weight: 400;
     color: #ffffffd8;
   }
 }

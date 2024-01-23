@@ -14,6 +14,18 @@
     </span>
   </div>
 
-  <span class="footer__span">Director: <span></span> </span>
-  <span class="footer__span">Writter: <span></span> </span>
+  @if (director?.length) {
+  <span class="footer__span"
+    >Director: @for (direct of director; track direct.id) {
+    <span class="footer__data">{{ direct.name }}</span>
+    }
+  </span>
+
+  } @if (writer?.length) {
+  <span class="footer__span"
+    >Writter: @for (writ of writer; track writ.id) {
+    <span class="footer__data">{{ writ.name }}</span>
+    }
+  </span>
+  }
 </footer>
