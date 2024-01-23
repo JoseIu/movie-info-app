@@ -8,9 +8,7 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    padding: 0.5em;
-
-    background-color: #e8e8e8;
+    transform: scale(1.05);
   }
   &__img {
     border-radius: 1em;
@@ -19,25 +17,22 @@
     position: absolute;
     width: 100%;
     padding: 1em;
-    color: #e8e8e8;
-
+    font-weight: 700;
     bottom: 0.5em;
     left: 0;
     min-height: 5em;
+    background: linear-gradient(2deg, rgba(4, 21, 45, 0) 0%, #070709 100%);
 
     display: flex;
     justify-content: space-between;
   }
   &__title {
-    font-weight: 600;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 0.2em;
   }
   &__release {
-    font-weight: 400;
     font-size: 0.9rem;
   }
 }
