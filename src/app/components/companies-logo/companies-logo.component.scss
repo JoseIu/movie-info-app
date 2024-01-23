@@ -1,14 +1,11 @@
 .logo {
   padding: 1em;
-  background-color: #e8e8e8;
+
+  background-color: var(--bg-color-actor-card);
   max-width: 9em;
 
   border-radius: 0.4em;
 
   display: flex;
   align-items: center;
-}
-.logo img {
-  // aspect-ratio: 16/9;
-  aspect-ratio: 19/13;
 }

@@ -4,6 +4,7 @@
   row-gap: 5em;
 }
 .title {
+  color: var(--text-color-secondary);
   font-size: 2rem;
   font-weight: 600;
 }
@@ -12,16 +13,20 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   gap: 2em;
+
   @media screen and (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
   }
   &__img {
     position: relative;
     border-radius: 0.3em;
     overflow: hidden;
+    object-fit: contain;
 
-    max-width: 50em;
+    max-width: 25em;
   }
   &__image {
     height: 100%;
@@ -36,6 +41,7 @@
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     row-gap: 1em;
     &-header {
       display: flex;
@@ -48,6 +54,7 @@
       row-gap: 0.4em;
     }
     &-subtitle {
+      color: var(--text-color-secondary);
       font-size: 1.1rem;
     }
     &-overview {
@@ -68,14 +75,16 @@
 .trailers {
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 1.5em;
   }
 }
 .movies {
+  padding: 1em;
   &__list {
+    color: var(--text-color-secondary);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
     gap: 2em;
   }
 }
