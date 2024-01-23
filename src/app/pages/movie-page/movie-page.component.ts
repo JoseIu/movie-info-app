@@ -60,8 +60,6 @@ export class MoviePageComponent implements OnInit {
     this.activateRoute.params
       .pipe(switchMap(({ id }) => this.moviesService.getMovieById(id)))
       .subscribe((movie) => {
-        // console.log('INFO MOVIE', movie);
-
         this.movie = movie;
         return;
       });
@@ -72,13 +70,9 @@ export class MoviePageComponent implements OnInit {
       .pipe(
         switchMap(({ id }) => this.moviesService.getCreditsMovie(id)),
         tap((credits: Credits) => {
-          console.log(credits);
-          console.log('CASR', credits.cast);
           this.creditsMovie = credits.cast;
 
           this.crew = credits.crew;
-
-          console.log('CREW', credits.crew);
         })
       )
       .subscribe();
@@ -88,7 +82,6 @@ export class MoviePageComponent implements OnInit {
     this.activateRoute.params
       .pipe(switchMap(({ id }) => this.moviesService.getTrailersMovie(id)))
       .subscribe((trailers) => {
-        // console.log('TRAILERS', trailers);
         this.trailersMovie = trailers;
         return;
       });
@@ -98,8 +91,6 @@ export class MoviePageComponent implements OnInit {
     this.activateRoute.params
       .pipe(switchMap(({ id }) => this.moviesService.getSimilarMovies(id)))
       .subscribe((similarMovies) => {
-        // console.log('SIMILAR MOVIES', similarMovies);
-
         this.similarMovies = similarMovies;
         return;
       });

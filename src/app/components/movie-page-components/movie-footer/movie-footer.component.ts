@@ -24,7 +24,5 @@ export class MovieFooterComponent implements OnChanges {
 
     this.director = director;
     this.writer = writer;
-
-    console.log(director, writer);
   }
 }
