@@ -2,11 +2,17 @@
 <section class="movie-ifo wrapper">
   <div class="movie">
     <div class="movie__img">
-      <img
-        class="movie__image"
-        [src]="img_500 + movie.backdrop_path"
-        [alt]="movie.title"
-      />
+      <div class="">
+        <img
+          class="movie__image"
+          loading="lazy"
+          height="400"
+          width="300"
+          [src]="img_500 + movie.poster_path"
+          [alt]="movie.title"
+          [style]="{ 'view-transition-name': 'movie-' + movie.id }"
+        />
+      </div>
       <rating-movie [rating]="movie.vote_average" class="movie__rating" />
     </div>
 
@@ -30,10 +36,11 @@
         [release_date]="movie.release_date"
         [runtime]="movie.runtime"
       />
+      <app-companies-logos
+        [production_companies]="movie.production_companies"
+      />
     </div>
   </div>
-
-  <app-companies-logos [production_companies]="movie.production_companies" />
 
   <section class="top-casts">
     <h2 class="title">Top Casts</h2>
