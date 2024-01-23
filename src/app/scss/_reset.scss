@@ -1,10 +1,31 @@
+@font-face {
+  font-family: "Onest Variable";
+  src: url("/assets/fonts/onest-latin-300-normal.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Onest Variable";
+  src: url("/assets/fonts/onest-latin-600-normal.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Onest Variable";
+  src: url("/assets/fonts/onest-latin-800-normal.woff") format("woff");
+  font-weight: 800;
+}
+
 :root {
   --bg-color: #070709;
+  --bg-color-actor-card: #cacaca;
+
   --text-color: #ffffff;
 
-  --text-color-secondary: #00d676;
-  --tipo-principal: Helvetica, Arial, sans-serif;
-  --tipo-secundaria: Verdana;
+  --text-color-secondary: #ec6000;
+  --text-color-tertiary: #f7dc50;
+
+  --tipo-principal: "Onest Variable";
 }
 
 *,
